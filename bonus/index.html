@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <!-- Style -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- FontAwesome Icon-->
+  <script src="https://kit.fontawesome.com/7ff5ce46be.js" crossorigin="anonymous"></script>
+  <!-- VueJS -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.4/dist/vue.js"></script>
+  <title>Document</title>
+</head>
+<body>
+<div class="container">
+  <section id="todo-list">
+    <h1 class="fw-bold">To Do List</h1>
+    <div class="wrapper-tasks">
+      <div class="d-flex justify-content-center">
+        <input type="text" v-model="valueTask" class="form-control cs-input" placeholder="Scrivi qui...">
+        <button @click="addNewTask" class="btn btn-primary">Aggiungi <i class="fa-solid fa-plus"></i></button>
+      </div>
+      <ul class="list-group">
+        <li v-for="(task, i) in tasks" class="list-group-item d-flex justify-content-between align-items-center">
+          <span :class="{done : task.isDone}">{{ task.description }}</span>
+          <div>
+            <!-- <button type="button" class="btn btn-success"><i class="fa-solid fa-check"></i></button> -->
+            <button @click="deleteTask(i)" type="button" class="btn btn-secondary ms-2"><i class="fa-solid fa-trash"></i></button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+</div>
+  <script src="js/script.js"></script>
+</body>
+</html>
