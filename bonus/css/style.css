@@ -3,6 +3,11 @@ body {
   background-color: darkslateblue;
 }
 
+i {
+  width: 13px;
+  height: 13px;
+}
+
 /* #Section to do list */
 #todo-list {
   width: 80%;
@@ -20,6 +25,13 @@ ul.list-group {
 
 span.done {
   text-decoration: line-through;
+}
+
+.description-task {
+  flex-grow: 1;
+  text-align: start;
+  height: 35px;
+  line-height: 35px;
 }
 
 .cs-input {

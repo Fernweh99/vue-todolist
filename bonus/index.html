@@ -25,10 +25,10 @@
       </div>
       <ul class="list-group">
         <li v-for="(task, i) in tasks" class="list-group-item d-flex justify-content-between align-items-center">
-          <span :class="{done : task.isDone}">{{ task.description }}</span>
+          <span @click="invertIsDone(i)" :class="{done : task.isDone}" class="description-task">{{ task.description }}</span>
           <div>
-            <button type="button" class="btn btn-success">
-              <i class="fa-solid fa-check"></i>
+            <button @click="invertIsDone(i)" type="button" :class="{'btn-danger' : task.isDone, 'btn-success' : !task.isDone}" class="btn">
+              <i :class="{'fa-x' : task.isDone, 'fa-check' : !task.isDone}" class="fa-solid"></i>
             </button>
             <button @click="deleteTask(i)" type="button" class="btn btn-secondary ms-2">
               <i class="fa-solid fa-trash"></i>

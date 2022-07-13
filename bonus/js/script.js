@@ -33,6 +33,10 @@ const App = new Vue({
         this.tasks.push({description: this.valueTask.trim(), isDone: false})
         this.valueTask = "";
       }
+    },
+    invertIsDone(i) {
+      this.tasks[i].isDone = !this.tasks[i].isDone;
     }
+
   }
 })
