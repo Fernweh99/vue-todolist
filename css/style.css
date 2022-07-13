@@ -21,3 +21,8 @@ ul.list-group {
 span.done {
   text-decoration: line-through;
 }
+
+.cs-input {
+  width: auto;
+  margin-right:10px;
+}

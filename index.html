@@ -19,6 +19,10 @@
   <section id="todo-list">
     <h1 class="fw-bold">To Do List</h1>
     <div class="wrapper-tasks">
+      <div class="d-flex justify-content-center">
+        <input type="text" v-model="valueTask" class="form-control cs-input" placeholder="Scrivi qui...">
+        <button @click="addNewTask" class="btn btn-primary">Aggiungi <i class="fa-solid fa-plus"></i></button>
+      </div>
       <ul class="list-group">
         <li v-for="(task, i) in tasks" class="list-group-item d-flex justify-content-between align-items-center">
           <span :class="{done : task.isDone}">{{ task.description }}</span>
