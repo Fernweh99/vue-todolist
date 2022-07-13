@@ -28,6 +28,11 @@ const App = new Vue({
         description: 'Andare in banca',
         isDone: true,
       },
-    ]
+    ],
+  },
+  methods: {
+    deleteTask(index) {
+      this.tasks.splice(index, 1);
+    },
   }
 })
